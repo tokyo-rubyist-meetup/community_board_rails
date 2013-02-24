@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130224053907) do
+ActiveRecord::Schema.define(:version => 20130224070106) do
 
   create_table "communities", :force => true do |t|
     t.string   "name",       :null => false
@@ -21,6 +21,17 @@ ActiveRecord::Schema.define(:version => 20130224053907) do
   end
 
   add_index "communities", ["owner_id"], :name => "index_communities_on_owner_id"
+
+  create_table "posts", :force => true do |t|
+    t.integer  "community_id"
+    t.integer  "user_id"
+    t.text     "text"
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "posts", ["community_id"], :name => "index_posts_on_community_id"
+  add_index "posts", ["user_id"], :name => "index_posts_on_user_id"
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false

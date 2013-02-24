@@ -31,4 +31,6 @@ end
 
 group :test do
   gem "launchy"
+  gem "poltergeist"
+  gem "database_cleaner"
 end

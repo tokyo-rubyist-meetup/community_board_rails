@@ -51,6 +51,7 @@ GEM
       execjs
     coffee-script-source (1.4.0)
     commonjs (0.2.6)
+    database_cleaner (0.9.1)
     devise (2.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -58,6 +59,7 @@ GEM
       warden (~> 1.2.1)
     diff-lcs (1.2.1)
     erubis (2.7.0)
+    eventmachine (1.0.0)
     execjs (1.4.0)
       multi_json (~> 1.0)
     factory_girl (4.2.0)
@@ -65,6 +67,8 @@ GEM
     factory_girl_rails (4.2.1)
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
+    faye-websocket (0.4.7)
+      eventmachine (>= 0.12.0)
     ffi (1.4.0)
     haml (4.0.0)
       tilt
@@ -74,6 +78,7 @@ GEM
       haml (>= 3.1, < 4.1)
       railties (>= 3.1, < 4.1)
     hike (1.2.1)
+    http_parser.rb (0.5.3)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.2.1)
@@ -97,6 +102,10 @@ GEM
     nokogiri (1.5.6)
     orm_adapter (0.4.0)
     pg (0.14.1)
+    poltergeist (1.1.0)
+      capybara (~> 2.0, >= 2.0.1)
+      faye-websocket (~> 0.4, >= 0.4.4)
+      http_parser.rb (~> 0.5.3)
     polyglot (0.3.3)
     rack (1.4.5)
     rack-cache (1.2)
@@ -190,6 +199,7 @@ PLATFORMS
 DEPENDENCIES
   cache_digests
   coffee-rails (~> 3.2.1)
+  database_cleaner
   devise
   factory_girl_rails
   haml-rails
@@ -198,6 +208,7 @@ DEPENDENCIES
   less-rails
   libv8 (~> 3.11.8)
   pg
+  poltergeist
   rails (= 3.2.12)
   rspec-rails
   sass-rails (~> 3.2.3)

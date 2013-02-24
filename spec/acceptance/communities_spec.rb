@@ -3,7 +3,7 @@ require 'acceptance/acceptance_helper'
 
 feature 'Create community' do
   scenario 'successfully' do
-    sign_in create(:user)
+    sign_in
     visit new_community_path
     fill_in "community_name", with: "Tokyo Rubyist Meetup"
     click_button "Create Community"

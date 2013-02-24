@@ -1,5 +1,13 @@
+.alert.alert-error.hide#alert-placeholder
 %ul.breadcrumb
   %li
     = link_to "Communities", communities_path
     %span.divider /
   %li.active= @community
+
+- if user_signed_in?
+  = simple_form_for Post.new, url: community_posts_path(@community), remote: true do |f|
+    .pull-right(style="width: 100px")= f.button :submit, "Post", class: "btn-primary", style: "width: 100%; height: 50px; vertical-align: top; font-size: 25px"
+    %div(style="overflow: hidden; padding-right: 20px")= f.input :text, input_html: { rows: 2, style: "width: 100%" }, wrapper: :inline
+
+#posts= render @community.posts.new_to_old
