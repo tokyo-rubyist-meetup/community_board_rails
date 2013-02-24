@@ -9,6 +9,7 @@ gem "simple_form"
 gem "haml-rails"
 gem "strong_parameters"
 gem "cache_digests"
+gem "rabl"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'

@@ -1,7 +1,7 @@
 class CommunitiesController < ApplicationController
   before_filter :authenticate_user!, only: %w[new create]
   before_filter :load_community, only: %w[show]
-  respond_to :html
+  respond_to :html, :json
 
   def index
     @communities = Community.all
