@@ -1,6 +1,10 @@
 class PostsController < ApplicationController
-  before_filter :authenticate_user!
+  before_filter :authenticate_user!, except: :index
   before_filter :load_community
+
+  def index
+    @posts = @community.posts.new_to_old
+  end
 
   def create
     @post = @community.posts.new(post_params)
