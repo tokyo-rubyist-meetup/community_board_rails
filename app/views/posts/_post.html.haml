@@ -1,3 +1,5 @@
 .post
-  = simple_format post.text
-  %em Posted by #{post.user} #{distance_of_time_in_words_to_now(post.created_at)} ago
+  = image_tag "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(post.user.email.downcase)}?s=50&d=mm", class: "avatar"
+  .post-body
+    = simple_format post.text
+    %em Posted by #{post.user} #{distance_of_time_in_words_to_now(post.created_at)} ago
