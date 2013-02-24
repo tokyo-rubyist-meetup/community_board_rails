@@ -41,7 +41,6 @@ module CommunityBoard
     config.generators do |g|
       g.stylesheets false
       g.javascripts false
-      g.form_builder :simple_form
       g.fixture_replacement :factory_girl, :dir => 'spec/factories'
     end
 
@@ -65,5 +64,7 @@ module CommunityBoard
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.action_mailer.default_url_options = { :host => 'community_board.dev' }
   end
 end
