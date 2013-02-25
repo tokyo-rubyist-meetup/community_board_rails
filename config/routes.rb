@@ -1,7 +1,7 @@
 CommunityBoard::Application.routes.draw do
   devise_for :users
-  resources :communities do
+  resources :communities, except: :index do
     resources :posts
   end
-  root to: 'home#index'
+  root to: 'communities#index'
 end
