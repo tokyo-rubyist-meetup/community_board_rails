@@ -7,9 +7,16 @@
       = link_to "Login", new_user_session_path, class: "btn btn-primary"
       = link_to "Register", new_user_registration_path, class: "btn"
 
-.page-header
-  %h2 Communities
-
-%ul
-  - @communities.each do |c|
-    %li= link_to c, c
+- (@communities + [:create_yours]).each_slice(4) do |row|
+  .row
+    - row.each do |c|
+      .span3
+        .community
+          - if c == :create_yours
+            .community-new= link_to "Create your own community!", new_community_path
+          - else 
+            = link_to c do
+              = image_tag "http://lorempixel.com/500/350/?id=#{c.id}"
+              .community-name
+                %span= c.name
+%small(style="margin-top: 20px; display: inline-block") Community photos are randomly generated from #{link_to "Lorem Pixel", "http://lorempixel.com/"}.
