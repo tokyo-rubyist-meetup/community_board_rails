@@ -4,5 +4,6 @@ FactoryGirl.define do
   factory :community do
     sequence(:name) {|n| "Community #{n}"}
     association :owner, factory: :user
+    photo { File.open(Rails.root.join( 'spec/fixtures/trbmeetup.jpeg')) }
   end
 end

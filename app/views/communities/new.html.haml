@@ -1,4 +1,11 @@
+.page-header
+  %h2 Create a new community
 = simple_form_for @community, html: { class: "form-horizontal"} do |f|
   = f.input :name
+  = f.input :photo, as: :file do
+    = f.file_field :photo
+    = image_tag(@community.photo.thumb) if @community.photo?
+  = f.input :photo_cache, as: :hidden
   .form-actions
     = f.button :submit, "Create Community", class: "btn-primary"
+    = link_to "Cancel", :back, class: "btn"

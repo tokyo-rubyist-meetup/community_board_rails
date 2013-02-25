@@ -1,12 +1,14 @@
 source 'https://rubygems.org'
 
 gem 'rails', '3.2.12'
+gem "mini_magick"
 gem 'jquery-rails'
 gem "devise"
 gem "simple_form"
 gem "haml-rails"
 gem "strong_parameters"
 gem "cache_digests"
+gem "carrierwave"
 
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
