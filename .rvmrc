@@ -1,1 +1,1 @@
-rvm gemset use --create ruby-1.9.3-perf@community_board
+rvm gemset use --create ruby-2.0.0@community_board
