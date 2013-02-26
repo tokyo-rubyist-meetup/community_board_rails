@@ -1,7 +1,7 @@
 <% if @post.valid? %>
   $("#alert-placeholder").hide();
   $("#post_text").val("");
-  $("#posts").html("<%= escape_javascript(render(@community.posts.new_to_old)) =%>");
+  $("#posts").prepend("<%= escape_javascript(render(@post)) =%>");
 <% else %>
   $("#alert-placeholder").html("<%= escape_javascript(@post.errors.full_messages.join("\n"))%>");
   $("#alert-placeholder").show();
