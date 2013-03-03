@@ -14,10 +14,6 @@ class PostsController < ApplicationController
 
   private
 
-  def load_community
-    @community = Community.find(params[:community_id])
-  end
-
   def post_params
     params.require(:post).permit(:text)
   end
