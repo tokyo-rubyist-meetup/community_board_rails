@@ -1,4 +1,5 @@
 class Api::V1::PostsController < ApplicationController
+  doorkeeper_for :all
   before_filter :load_community
   respond_to :json
   def index
