@@ -1,5 +1,4 @@
-class Api::V1::CommunitiesController < ApplicationController
-  doorkeeper_for :all
+class Api::V1::CommunitiesController < Api::V1::ApiController
   respond_to :json
   def index
     @communities = Community.all
