@@ -20,6 +20,10 @@ group :assets do
   gem "therubyracer"
 end
 
+group :development do
+  gem "heroku"
+end
+
 group :development, :test do
   gem 'sqlite3'
   gem "rspec-rails"
