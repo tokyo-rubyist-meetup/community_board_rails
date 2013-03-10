@@ -10,7 +10,7 @@ gem "haml-rails"
 gem "strong_parameters"
 gem "cache_digests"
 gem "twitter-bootstrap-rails", ">= 2.1.0"
-gem "active_model_serializers", :github => "rails-api/active_model_serializers"
+gem "active_model_serializers", "~> 0.7.0"
 gem 'doorkeeper'
 
 group :assets do
