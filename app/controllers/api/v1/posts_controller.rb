@@ -11,7 +11,7 @@ class Api::V1::PostsController < Api::V1::ApiController
     @post = @community.posts.build(post_params)
     @post.user = current_resource_owner
     @post.save
-    respond_with @post
+    respond_with @post, location: nil
   end
 
   private
