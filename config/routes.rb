@@ -4,8 +4,8 @@ CommunityBoard::Application.routes.draw do
   devise_for :users
   namespace "api" do
     namespace "v1" do
-      resources :communities do
-        resources :posts
+      resources :communities, only: :index do
+        resources :posts, only: %w[index create]
       end
     end
   end
