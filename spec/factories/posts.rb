@@ -2,8 +2,8 @@
 
 FactoryGirl.define do
   factory :post do
-    community nil
-    user nil
+    community
+    user
     text "MyText"
   end
 end
