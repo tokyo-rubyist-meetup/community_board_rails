@@ -31,12 +31,19 @@ feature 'API' do
   end
 
   context "posts" do
-    let(:community) { community_post.community }
-    let!(:community_post) { create(:post) }
+    let!(:community) { create(:community) }
 
     scenario 'index' do
+      community_post = create(:post, user: user, community: community)
       get "/api/v1/communities/#{community.id}/posts"
-      json["posts"].first["id"].should == community_post.id
+      json["posts"].size.should == 1
+      post_json = json["posts"].first
+      post_json["id"].should == community_post.id
+      post_json["text"].should == community_post.text
+      user_json = post_json["user"]
+      user_json["id"].should == user.id
+      user_json["name"].should == user.name
+      user_json["avatar_url"].should == "https://www.gravatar.com/avatar/#{Digest::MD5.hexdigest(user.email.downcase)}"
     end
 
     scenario 'create' do
