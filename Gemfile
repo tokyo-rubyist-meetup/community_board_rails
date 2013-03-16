@@ -39,4 +39,6 @@ group :test do
   gem "launchy"
   gem "poltergeist"
   gem "database_cleaner"
+  gem "oauth2"
+  gem "capybara-json"
 end
