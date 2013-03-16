@@ -14,9 +14,10 @@ feature 'API' do
   end
   let(:token) { client.password.get_token(user.email, user.password) }
 
-  scenario('auth ok') { token.should_not be_expired }
-
-  scenario('auth nok') { -> {client.password.get_token(user.email, "123")}.should raise_error(OAuth2::Error) }
+  context "OAuth" do
+    scenario('auth ok') { token.should_not be_expired }
+    scenario('auth nok') { -> {client.password.get_token(user.email, "123")}.should raise_error(OAuth2::Error) }
+  end
 
   context "communities" do
     let!(:community) { create(:community) }
