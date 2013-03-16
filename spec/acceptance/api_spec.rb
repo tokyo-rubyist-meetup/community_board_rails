@@ -22,7 +22,11 @@ feature 'API' do
     let!(:community) { create(:community) }
     scenario 'index' do
       get '/api/v1/communities'
-      json["communities"].first["id"].should == community.id
+      json["communities"].size.should == 1
+      community_json = json["communities"].first
+      community_json["id"].should == community.id
+      community_json["name"].should == community.name
+      community_json["post_count"].should == community.posts.count
     end
   end
 
