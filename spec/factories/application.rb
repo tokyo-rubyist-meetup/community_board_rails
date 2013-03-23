@@ -1,4 +1,4 @@
-if defined? Doorkeeper
+if defined? Doorkeeper::Application
   FactoryGirl.define do
     factory :application, class: Doorkeeper::Application  do
       sequence(:name){ |n| "Application #{n}" }
