@@ -51,7 +51,7 @@ gem "active_model_serializers", "~> 0.7.0"
 
 and then `bundle` it.
 
-Use `rails g serializer community id name` to generate `app/serializers/community_serializer.rb`.
+Use `rails g serializer community name` to generate `app/serializers/community_serializer.rb`.
 
 Restart rails, and fetch the communities again. This time, the json should look like
 
@@ -75,10 +75,10 @@ Create the communities controller at `app/controllers/api/v1/posts_controller.rb
 
 ``` ruby
 class Api::V1::PostsController < ApplicationController
-  before_filter :load_community
   respond_to :json
 
   def index
+    @community = Community.find(params[:community_id])
     @posts = @community.posts.new_to_old
     respond_with @posts
   end
