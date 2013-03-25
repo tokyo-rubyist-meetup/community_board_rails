@@ -1,6 +1,6 @@
 # Client / Server Team-up: Pairing Ruby on Rails with iOS
 
-This repository contains the sample application for the event [Client / Server Team-up: Pairing Ruby on Rails with iOS](http://www.tokyorubyistmeetup.org/events/2814). A live version of the application is [running here](https://community-board.herokuapp.com/).
+This repository contains the sample application for the event [Client / Server Team-up: Pairing Ruby on Rails with iOS](http://www.tokyorubyistmeetup.org/events/2814). A live version of the application is [running here](https://community-board.herokuapp.com/). Also, you can check out the slides: https://speakerdeck.com/pwim/creating-a-restful-api-for-mobile-applications
 
 ## Install Dependencies
 
